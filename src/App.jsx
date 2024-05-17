@@ -16,6 +16,11 @@ import ChecklistMaster from "./Work Place/Components/ChecklistMaster";
 import MasterTools from "./Work Place/Components/MasterTools";
 import MachineCreation from "./Work Place/Masters/MachineCreation";
 import ScheduleCreation from "./Work Place/Masters/ScheduleCreation";
+import SchedulePlan from "./Work Place/Planners/SchedulePlan";
+import ReSchedulePlan from "./Work Place/Planners/ReSchedulePlan";
+import MachineReport from "./Work Place/Reports/MachineReport";
+import ScheduleReport from "./Work Place/Reports/ScheduleReport";
+import CertificateMaster from "./Work Place/Reports/CertificateMaster";
 
 function App() {
   return (
@@ -43,7 +48,11 @@ function App() {
           <Route path="/master-tools" element={<MasterTools />} />
           <Route path="/machine-creation" element={<MachineCreation />} />
           <Route path="/schedule-creation" element={<ScheduleCreation />} />
-
+<Route path="/schedule-plan" element={<SchedulePlan/>}/>
+<Route path="/reschedule-plan" element={<ReSchedulePlan/>}/>
+<Route path="/machine-report" element={<MachineReport/>}/>
+<Route path="/schedule-report" element={<ScheduleReport/>}/>
+<Route path="/certificate-master" element={<CertificateMaster/>}/>
         </Routes>
       </BrowserRouter>
     </>
