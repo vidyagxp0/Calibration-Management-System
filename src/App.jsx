@@ -48,11 +48,11 @@ function App() {
           <Route path="/master-tools" element={<MasterTools />} />
           <Route path="/machine-creation" element={<MachineCreation />} />
           <Route path="/schedule-creation" element={<ScheduleCreation />} />
-<Route path="/schedule-plan" element={<SchedulePlan/>}/>
-<Route path="/reschedule-plan" element={<ReSchedulePlan/>}/>
-<Route path="/machine-report" element={<MachineReport/>}/>
-<Route path="/schedule-report" element={<ScheduleReport/>}/>
-<Route path="/certificate-master" element={<CertificateMaster/>}/>
+          <Route path="/schedule-plan" element={<SchedulePlan />} />
+          <Route path="/reschedule-plan" element={<ReSchedulePlan />} />
+          <Route path="/machine-report" element={<MachineReport />} />
+          <Route path="/schedule-report" element={<ScheduleReport />} />
+          <Route path="/certificate-master" element={<CertificateMaster />} />
         </Routes>
       </BrowserRouter>
     </>
