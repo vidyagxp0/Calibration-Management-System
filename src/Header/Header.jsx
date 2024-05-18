@@ -13,6 +13,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isWorkOpen, setIsWorkOpen] = useState(false);
   const [isLogoutOpen, setIsLogoutOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("");
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -21,7 +22,7 @@ const Header = () => {
   return (
     <div className="bg-white grid grid-cols-5 gap-4 p-4">
       <div>
-        <img src="vidyalogo2.png" className="h-[40px]" alt="Logo" />
+        <img src="vidyalogo2.png" className="h-[40px]" alt="Logo"  onClick={()=>navigate("/dashboard")}/>
       </div>
       <div className="flex gap-4 items-center justify-center col-span-3">
         <div
@@ -34,12 +35,12 @@ const Header = () => {
           </div>
         </div>
         <div className="menu-container">
-          <div className="flex gap-3 hover:text-indigo-500 cursor-pointer">
+          <div className="flex gap-3 hover:text-indigo-500 cursor-pointer"   onClick={toggleDropdown}>
             <SummarizeIcon />
 
             <div
               className="text-[16px] font-medium hover:text-indigo-500 cursor-pointer menu-item"
-              onClick={toggleDropdown}
+            
             >
               Masters{" "}
               <span className="arrow">
@@ -82,11 +83,11 @@ const Header = () => {
             </div>
           )}
         </div>
-        <div className="flex gap-3 hover:text-indigo-500 cursor-pointer">
+        <div className="flex gap-3 hover:text-indigo-500 cursor-pointer"    onClick={() => navigate("/audit-trail")}>
           <SignalCellularAltIcon />
           <div
             className="text-[16px] font-medium hover:text-indigo-500 cursor-pointer"
-            onClick={() => navigate("/audit-trail")}
+         
           >
             Audit Trail
           </div>
@@ -110,19 +111,25 @@ const Header = () => {
                 <div className="px-4 pt-4 font-semibold">Components</div>
                 <div
                   className="dropdown-item "
-                  onClick={() => navigate("/function-location")}
+                  onClick={() => {
+                    navigate("/function-location"), setIsWorkOpen(!isWorkOpen);
+                  }}
                 >
                   Function Location
                 </div>
                 <div
                   className="dropdown-item"
-                  onClick={() => navigate("/checklist-master")}
+                  onClick={() => {
+                    setIsWorkOpen(!isWorkOpen), navigate("/checklist-master");
+                  }}
                 >
                   Checklist Master
                 </div>
                 <div
                   className="dropdown-item"
-                  onClick={() => navigate("/master-tools")}
+                  onClick={() => {
+                    navigate("/master-tools"), setIsWorkOpen(!isWorkOpen);
+                  }}
                 >
                   Master Tools
                 </div>
@@ -131,13 +138,17 @@ const Header = () => {
                 <div className="px-4 pt-4 font-semibold">Masters</div>
                 <div
                   className="dropdown-item"
-                  onClick={() => navigate("/machine-creation")}
+                  onClick={() => {
+                    setIsWorkOpen(!isWorkOpen), navigate("/machine-creation");
+                  }}
                 >
                   Machine Creation
                 </div>
                 <div
                   className="dropdown-item"
-                  onClick={() => navigate("/schedule-creation")}
+                  onClick={() => {
+                    navigate("/schedule-creation"), setIsWorkOpen(!isWorkOpen);
+                  }}
                 >
                   Schedule Creation
                 </div>
@@ -146,13 +157,17 @@ const Header = () => {
                 <div className="px-4 pt-4 font-semibold">Planers</div>
                 <div
                   className="dropdown-item"
-                  onClick={() => navigate("/schedule-plan")}
+                  onClick={() => {
+                    navigate("/schedule-plan"), setIsWorkOpen(!isWorkOpen);
+                  }}
                 >
                   Schedule Plan
                 </div>
                 <div
                   className="dropdown-item"
-                  onClick={() => navigate("/reschedule-plan")}
+                  onClick={() => {
+                    navigate("/reschedule-plan"), setIsWorkOpen(!isWorkOpen);
+                  }}
                 >
                   Re-Schedule Plan
                 </div>
@@ -161,19 +176,25 @@ const Header = () => {
                 <div className="px-4 pt-4 font-semibold">Reports</div>
                 <div
                   className="dropdown-item"
-                  onClick={() => navigate("/machine-report")}
+                  onClick={() => {
+                    navigate("/machine-report", setIsWorkOpen(!isWorkOpen));
+                  }}
                 >
                   Machine Report
                 </div>
                 <div
                   className="dropdown-item"
-                  onClick={() => navigate("/schedule-report")}
+                  onClick={() => {
+                    navigate("/schedule-report"), setIsWorkOpen(!isWorkOpen);
+                  }}
                 >
                   Schedule Report
                 </div>
                 <div
                   className="dropdown-item"
-                  onClick={() => navigate("/certificate-master")}
+                  onClick={() => {
+                    navigate("/certificate-master"), setIsWorkOpen(!isWorkOpen);
+                  }}
                 >
                   Certificate Master
                 </div>

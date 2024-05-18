@@ -37,5 +37,8 @@
   .dropdown-item:hover {
     background-color: #ddd;
   }
-
+  .active {
+    color: #4f46e5; /* Change this to your desired active color */
+    font-weight: bold;
+  }
   

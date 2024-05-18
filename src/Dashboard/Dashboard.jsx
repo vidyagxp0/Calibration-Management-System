@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
-const navigate=useNavigate()
+  const navigate = useNavigate();
   const toggleDrawer = (newOpen) => (event) => {
     if (
       event.type === "keydown" &&
@@ -21,14 +21,12 @@ const navigate=useNavigate()
 
   const DrawerList = () => (
     <Box sx={{ width: "1000px" }}>
-      <div
-        role="presentation"
-      >
+      <div role="presentation">
         <div className="flex justify-between p-2 border border-gray-500">
           <div>INSTRUMENT UNDER REVIEWER / APPROVER</div>
           <div
             className=" cursor-pointer hover:text-red-700"
-            onClick={ toggleDrawer(false)}
+            onClick={toggleDrawer(false)}
           >
             X
           </div>
@@ -51,9 +49,16 @@ const navigate=useNavigate()
                 <td>warehouse</td>
                 <td>Developer</td>
                 <td>WorkFlow 02</td>
-                <td><div className="flex gap-2">
-                    <button className="bg-indigo-500 text-white p-1 ">Approve</button>
-                    <button className="bg-red-500 p-1 text-white">Reject</button></div></td>
+                <td>
+                  <div className="flex gap-2">
+                    <button className="bg-indigo-500 text-white p-1 ">
+                      Approve
+                    </button>
+                    <button className="bg-red-500 p-1 text-white">
+                      Reject
+                    </button>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -66,13 +71,15 @@ const navigate=useNavigate()
     <div className="bg-gray-200 header">
       <Header />
 
-      <div className="px-5 flex justify-between border border-b-gray-800 ">
+      <div className="px-5 flex justify-between border border-b-gray-800 pb-2 ">
         <div className="">
-          <div className="text-[20px] font-bold"> Hi, welcome back!</div>{" "}
-          <div className="text-[14px]">Your schedule management dashboard.</div>
+          <div className="text-[22px] font-bold"> Hi, welcome back!</div>{" "}
+          <div className="text-[14px] font-medium">
+            Your schedule management dashboard.
+          </div>
         </div>
         <div className="">
-          <div className="text-[12px] text-gray-600 font-normal">TODAY</div>
+          <div className="text-[12px] text-gray-600 font-medium">TODAY</div>
           <div className="text-[18px] font-medium">Wed, 15 May 2024</div>
         </div>
       </div>
@@ -93,38 +100,56 @@ const navigate=useNavigate()
               INSTRUMENT UNDER REVIEWER
             </div>
           </div>
-          <div onClick={toggleDrawer(true)} className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-3">
+          <div
+            onClick={toggleDrawer(true)}
+            className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-3"
+          >
             <div className="text-[24px] text-white">0</div>
             <div className="text-[14px] text-white">
               INSTRUMENT UNDER APPROVER
             </div>
           </div>
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3" onClick={toggleDrawer(true)}>
+          <div
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3"
+            onClick={toggleDrawer(true)}
+          >
             <div className="text-[24px] text-white">1</div>
             <div className="text-[14px] text-white">
               SCHEDULE UNDER REVIEWER
             </div>
           </div>
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3" onClick={toggleDrawer(true)}>
+          <div
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3"
+            onClick={toggleDrawer(true)}
+          >
             <div className="text-[24px] text-white">0</div>
             <div className="text-[14px] text-white">
               {" "}
               SCHEDULE UNDER APPROVER
             </div>
           </div>
-          <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% col-start-1 col-end-3 p-3" onClick={()=>navigate("/schedule-under-executon")}>
+          <div
+            className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% col-start-1 col-end-3 p-3"
+            onClick={() => navigate("/schedule-under-executon")}
+          >
             <div className="text-[24px] text-white">6</div>{" "}
             <div className="text-[14px] text-white">
               SCHEDULE UNDER EXECUTION
             </div>{" "}
           </div>
-          <div className="bg-gradient-to-r from-indigo-500 p-3 " onClick={()=>navigate("/execution-under-reviewer")}>
+          <div
+            className="bg-gradient-to-r from-indigo-500 to-green-400 p-3 "
+            onClick={() => navigate("/execution-under-reviewer")}
+          >
             <div className="text-[24px] text-white">1</div>
             <div className="text-[14px] text-white">
               EXECUTION UNDER REVIEWER
             </div>
           </div>
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3" onClick={()=>navigate("/schedule-under-executon")}>
+          <div
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3"
+            onClick={() => navigate("/schedule-under-executon")}
+          >
             <div className="text-[24px] text-white">0</div>
             <div className="text-[14px] text-white">
               {" "}
