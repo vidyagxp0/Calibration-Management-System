@@ -3,18 +3,20 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
+  BarElement,
   PointElement,
   LineElement,
   Title,
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import { Line, Bar } from 'react-chartjs-2';
 
 // Register the required components
 ChartJS.register(
   CategoryScale,
   LinearScale,
+  BarElement,
   PointElement,
   LineElement,
   Title,
@@ -22,7 +24,7 @@ ChartJS.register(
   Legend
 );
 
-const MyLineChart = () => {
+const MyLineChart = ({ chartType = 'line' }) => {
   const data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
@@ -59,6 +61,7 @@ const MyLineChart = () => {
     ],
   };
 
+
   const options = {
     responsive: true,
     plugins: {
@@ -76,13 +79,13 @@ const MyLineChart = () => {
       },
     },
   };
-
+  const ChartComponent = chartType === 'bar' ? Bar : Line;
   return (
     <div className='p-2'>
-      <h2 className='text-[14px] font-medium'>Over Year</h2>
-      <p className='text-[12px]'>Calibaration status.</p>
-      <Line data={data} options={options} />
-    </div>
+    <h2 className='text-[14px] font-medium'>Over Year</h2>
+    <p className='text-[12px]'>Calibration status.</p>
+    <ChartComponent data={data} options={options} />
+  </div>
   );
 };
 

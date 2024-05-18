@@ -136,7 +136,7 @@ const navigate=useNavigate()
 
       <div className="grid grid-cols-3 gap-4 p-4 ">
         <div className="col-span-2 bg-white">
-          <MyLineChart />
+          <MyLineChart chartType="bar" />
         </div>
         <div className="bg-white p-2">
           <MyCalendar />
