@@ -58,7 +58,7 @@ const MasterTools = () => {
         </Box>
       );
   return (
-    <div className='bg-gray-200'>
+    <div className='bg-gray-200 h-[100vh]'>
     <Header/>
     <div className='px-4 py-3 flex justify-between'>
 <div className='text-[24px] font-semibold' > Function Location Master</div>

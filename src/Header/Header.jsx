@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import StackedLineChartIcon from "@mui/icons-material/StackedLineChart";
 import SummarizeIcon from "@mui/icons-material/Summarize";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
@@ -8,40 +8,67 @@ import PersonIcon from "@mui/icons-material/Person";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./Header.css";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isWorkOpen, setIsWorkOpen] = useState(false);
   const [isLogoutOpen, setIsLogoutOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("");
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  const [activeMenu, setActiveMenu] = useState("dashboard");
   const navigate = useNavigate();
+
+  const dropdownRef = useRef(null);
+  const workDropdownRef = useRef(null);
+  const logoutDropdownRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (
+      dropdownRef.current && !dropdownRef.current.contains(event.target) &&
+      workDropdownRef.current && !workDropdownRef.current.contains(event.target) &&
+      logoutDropdownRef.current && !logoutDropdownRef.current.contains(event.target)
+    ) {
+      setIsOpen(false);
+      setIsWorkOpen(false);
+      setIsLogoutOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="bg-white grid grid-cols-5 gap-4 p-4">
       <div>
-        <img src="vidyalogo2.png" className="h-[40px]" alt="Logo"  onClick={()=>navigate("/dashboard")}/>
+        <img
+          src="vidyalogo2.png"
+          className="h-[40px]"
+          alt="Logo"
+          onClick={() => navigate("/dashboard")}
+        />
       </div>
       <div className="flex gap-4 items-center justify-center col-span-3">
         <div
-          className="flex gap-3 hover:text-indigo-500 cursor-pointer"
+          className={`flex gap-3 hover:text-indigo-500 cursor-pointer ${
+            activeMenu === "dashboard" ? "active" : ""
+          }`}
           onClick={() => navigate("/dashboard")}
         >
           <StackedLineChartIcon />
-          <div className="text-[16px] font-medium hover:text-indigo-500 cursor-pointer">
+          <div className="text-[16px] font-medium hover:text-indigo-500  cursor-pointer">
             Dashboard
           </div>
         </div>
-        <div className="menu-container">
-          <div className="flex gap-3 hover:text-indigo-500 cursor-pointer"   onClick={toggleDropdown}>
+        <div className="menu-container" ref={dropdownRef}>
+          <div
+            className="flex gap-3 hover:text-indigo-500 cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <SummarizeIcon />
-
-            <div
-              className="text-[16px] font-medium hover:text-indigo-500 cursor-pointer menu-item"
-            
-            >
+            <div className="text-[16px] font-medium hover:text-indigo-500 cursor-pointer menu-item">
               Masters{" "}
               <span className="arrow">
                 {isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
@@ -83,19 +110,27 @@ const Header = () => {
             </div>
           )}
         </div>
-        <div className="flex gap-3 hover:text-indigo-500 cursor-pointer"    onClick={() => navigate("/audit-trail")}>
+        <div
+          className={`flex gap-3 hover:text-indigo-500 cursor-pointer ${
+            activeMenu === "auditTrail" ? "active" : ""
+          }`}
+          onClick={() => {
+            setActiveMenu("auditTrail"), navigate("/audit-trail");
+          }}
+        >
           <SignalCellularAltIcon />
-          <div
-            className="text-[16px] font-medium hover:text-indigo-500 cursor-pointer"
-         
-          >
+          <div className="text-[16px] font-medium hover:text-indigo-500 cursor-pointer">
             Audit Trail
           </div>
         </div>
-        <div className="menu-container">
+        <div className="menu-container" ref={workDropdownRef}>
           <div
-            className="flex gap-3 hover:text-indigo-500 cursor-pointer menu-item"
-            onClick={() => setIsWorkOpen(!isWorkOpen)}
+            className={`flex gap-3 hover:text-indigo-500 cursor-pointer menu-item ${
+              activeMenu === "workPlace" ? "active" : ""
+            }`}
+            onClick={() => {
+              setIsWorkOpen(!isWorkOpen), setActiveMenu("workPlace"), setIsOpen(false)
+            }}
           >
             <ApartmentIcon />
             <div className="text-[16px] font-medium hover:text-indigo-500 cursor-pointer">
@@ -177,7 +212,7 @@ const Header = () => {
                 <div
                   className="dropdown-item"
                   onClick={() => {
-                    navigate("/machine-report", setIsWorkOpen(!isWorkOpen));
+                    navigate("/machine-report"), setIsWorkOpen(!isWorkOpen);
                   }}
                 >
                   Machine Report
@@ -201,12 +236,17 @@ const Header = () => {
                 <div className="dropdown-item">Label Print</div>
               </div>
             </div>
-          )}
+          )}   
         </div>
       </div>
-      <div className="menu-container">
+      <div className="menu-container" ref={logoutDropdownRef}>
         <div className="flex items-center justify-end menu-item">
-          <PersonIcon onClick={() => setIsLogoutOpen(!isLogoutOpen)} />
+          <PersonIcon
+            onClick={() => {
+              setIsLogoutOpen(!isLogoutOpen), setActiveMenu("login");
+            }}
+            className={activeMenu === "login" ? `active` : ""}
+          />
           {isLogoutOpen && (
             <div className="dropdown w-[280px]">
               <div className="dropdown-item text-center">Admin</div>
@@ -215,6 +255,7 @@ const Header = () => {
                   className="p-3 bg-red-500 text-white w-full"
                   onClick={() => navigate("/")}
                 >
+                  <LogoutIcon color="white" className="mr-2"/>
                   Sign Out
                 </button>
               </div>

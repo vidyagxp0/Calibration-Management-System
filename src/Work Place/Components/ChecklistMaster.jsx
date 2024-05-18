@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../../Header/Header";
-
+import CloseSharpIcon from '@mui/icons-material/CloseSharp';
 const ChecklistMaster = () => {
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200 h-[100vh]">
       <Header />
       <div className="flex justify-between border border-b-gray-400  p-2">
         <div className="text-[24px] font-semibold">CheckList Master</div>
@@ -91,8 +91,9 @@ const ChecklistMaster = () => {
                   <tr>
                     <td>1</td>
                     <td>25</td>
-                    <td></td>
+                    <td><div className="p-2 bg-red-500 w-[40px] text-white"><CloseSharpIcon/></div></td>
                   </tr>
+                  
                 </tbody>
               </table>
             </div>
