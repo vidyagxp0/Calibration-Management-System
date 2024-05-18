@@ -69,7 +69,7 @@ const ChecklistMaster = () => {
             <div className="grid grid-cols-2 gap-4 border border-b-gray-400 pb-3">
               <div className="flex flex-col py-3">
                 <label className="text-[14px] font-medium pb-2">
-                  Applied Pressure:s
+                  Applied Pressure
                 </label>
                 <input className="border border-gray-500 rounded p-2 " />
               </div>
