@@ -79,7 +79,7 @@ const navigate=useNavigate()
   ];
 
   return (
-    <div className="bg-orange-100 h-full">
+    <div className="bg-gray-100 h-full">
       <Header />
       <div className="flex justify-between p-4">
         <div className="text-[18px] font-medium">Department Master</div>

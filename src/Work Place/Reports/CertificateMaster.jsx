@@ -64,7 +64,7 @@ const CertificateMaster = () => {
     createdBy:"Admin"
   }]
   return (
-    <div className='bg-orange-100 h-[100vh]'>
+    <div className='bg-gray-100 h-[100vh]'>
       <Header/>
       <div className='px-4 py-3'>
 <div className='text-[24px] font-semibold'>Certificate Master</div>

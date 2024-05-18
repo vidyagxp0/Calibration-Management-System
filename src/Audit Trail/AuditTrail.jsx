@@ -3,7 +3,7 @@ import Header from '../Header/Header'
 import "./AuditTrail.css"
 const AuditTrail = () => {
   return (
-    <div className='bg-orange-100  head'>
+    <div className='bg-gray-100  head'>
       <Header/>
       <div className=''>
         <div className='flex justify-between p-4'>

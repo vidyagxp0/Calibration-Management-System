@@ -20,7 +20,7 @@ const AccessRole = () => {
     ];
 
     return (
-        <div className='bg-orange-100 h-full'>
+        <div className='bg-gray-100 h-full'>
             <Header />
             <div className='p-2 flex justify-between border border-b-gray-400'>
                 <div className='text-[20px] font-medium'>WorkFlow Master</div>

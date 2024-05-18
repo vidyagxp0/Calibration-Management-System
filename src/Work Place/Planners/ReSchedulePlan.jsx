@@ -3,7 +3,7 @@ import Header from '../../Header/Header'
 
 const ReSchedulePlan = () => {
   return (
-    <div className='bg-orange-100'>
+    <div className='bg-gray-100'>
      <Header/>
      <div className="p-2 flex justify-between border border-b-gray-400">
         <div className="text-[20px] font-medium">Re-Schedule</div>

@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
 const ChecklistMaster = () => {
   return (
-    <div className="bg-orange-100 h-[100vh]">
+    <div className="bg-gray-100 h-[100vh]">
       <Header />
       <div className="flex justify-between border border-b-gray-400  p-2">
         <div className="text-[24px] font-semibold">CheckList Master</div>

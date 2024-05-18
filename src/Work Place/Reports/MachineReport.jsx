@@ -12,7 +12,7 @@ const MachineReport = () => {
     { MACHINEID: "M006", MACHINENAME: "Test Machine 06", DEPARTMENT: "Developer", LOCATION: "Test Location", WORKFLOW: "WorkFlow 02", SCHEDULE: { COMPLETED: 2, PENDING: 0, OVERDUE: 2, BLOCK: 0 }, STATUS: "Active", CREATEDBY: "Admin", CREATEDDATE: "07-12-2022" },
   ];
   return (
-    <div className='bg-orange-100'>
+    <div className='bg-gray-100'>
       <Header/>
       <div className='px-4 py-3'>
 <div className='text-[24px] font-semibold'>Machine Report</div>

@@ -68,7 +68,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="bg-orange-100 header">
+    <div className="bg-gray-100 header">
       <Header />
 
       <div className="px-5 flex justify-between border border-b-gray-800 pb-2 ">
@@ -85,7 +85,7 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-4 p-4">
-        <div className="col-span-2 bg-white">
+        <div className="col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,0.50)]">
           <MyLineChart />
         </div>
 
@@ -160,10 +160,10 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-4 p-4 ">
-        <div className="col-span-2 bg-white">
+        <div className="col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,0.50)]">
           <MyLineChart chartType="bar" />
         </div>
-        <div className="bg-white p-2">
+        <div className="bg-white p-2 drop-shadow-[0_15px_15px_rgba(80,75,69,0.50)]">
           <MyCalendar />
         </div>
       </div>
