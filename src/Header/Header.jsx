@@ -41,7 +41,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="bg-white grid grid-cols-5 gap-4 p-4">
+    <div className="bg-white grid grid-cols-2 gap-4 p-4">
       <div>
         <img
           src="vidyalogo2.png"
@@ -50,7 +50,7 @@ const Header = () => {
           onClick={() => navigate("/dashboard")}
         />
       </div>
-      <div className="flex gap-4 items-center justify-center col-span-3">
+      <div className="flex gap-4 items-center justify-end col-span-">
         <div
           className={`flex gap-3 hover:text-indigo-500 cursor-pointer ${
             activeMenu === "dashboard" ? "active" : ""
@@ -238,9 +238,8 @@ const Header = () => {
             </div>
           )}   
         </div>
-      </div>
-      <div className="menu-container" ref={logoutDropdownRef}>
-        <div className="flex items-center justify-end menu-item">
+        <div className="menu-container" ref={logoutDropdownRef}>
+        <div className="flex items-center justify-end menu-item ">
           <PersonIcon
             onClick={() => {
               setIsLogoutOpen(!isLogoutOpen), setActiveMenu("login");
@@ -263,6 +262,8 @@ const Header = () => {
           )}
         </div>
       </div>
+      </div>
+     
     </div>
   );
 };

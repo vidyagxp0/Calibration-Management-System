@@ -68,7 +68,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="bg-gray-200 header">
+    <div className="bg-orange-100 header">
       <Header />
 
       <div className="px-5 flex justify-between border border-b-gray-800 pb-2 ">

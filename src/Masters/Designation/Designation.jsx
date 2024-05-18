@@ -155,7 +155,7 @@ const Designation = () => {
       ];
     
   return (
-    <div className='p-2 bg-gray-200'>
+    <div className='p-2 bg-orange-100'>
       <Header />
       <div className="flex justify-between p-4">
         <div className="text-[18px] font-medium">Designation Master</div>
