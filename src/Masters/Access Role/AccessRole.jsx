@@ -22,13 +22,13 @@ const AccessRole = () => {
     return (
         <div className='bg-gray-100 h-full'>
             <Header />
-            <div className='p-2 flex justify-between border border-b-gray-400'>
-                <div className='text-[20px] font-medium'>WorkFlow Master</div>
-                <div className='text-[20px] font-medium'>Action Area</div>
+            <div className='p-2 flex flex-col lg:flex-row justify-between border border-b-gray-400'>
+                <div className='text-lg font-medium'>WorkFlow Master</div>
+                <div className='text-lg font-medium mt-2 lg:mt-0'>Action Area</div>
             </div>
-            <div className='grid grid-cols-5 gap-4 p-2'>
-                <div className='col-span-3'>
-                    <div>
+            <div className='grid grid-cols-1 lg:grid-cols-5 gap-4 p-2'>
+                <div className='lg:col-span-3'>
+                    <div className="overflow-x-auto">
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr>
@@ -58,9 +58,9 @@ const AccessRole = () => {
                         </table>
                     </div>
                 </div>
-                <div className='col-span-2'>
+                <div className='lg:col-span-2'>
                     <div className="p-2 border border-l-gray-400">
-                        <div className='grid grid-cols-2 gap-4 border border-b-gray-400 pb-3'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 border border-b-gray-400 pb-3'>
                             <div className="flex flex-col pt-4 gap-3">
                                 <label className="font-medium">Group Name</label>
                                 <input type="text" placeholder="" className="border border-gray-500 rounded p-2 w-full" />

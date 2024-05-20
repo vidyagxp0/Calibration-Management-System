@@ -18,39 +18,41 @@ const Dashboard = () => {
   };
 
   const DrawerList = () => (
-    <Box sx={{ width: { xs: "90vw", sm: "60vw", md: "60vw", lg: "60vw" } }}>
+    <Box sx={{ width: { xs: '90vw', sm: '60vw', md: '60vw', lg: '60vw' } }}>
       <div role="presentation">
         <div className="flex justify-between p-2 border border-gray-500">
-          <div>INSTRUMENT UNDER REVIEWER / APPROVER</div>
+          <div className="text-sm md:text-lg lg:text-xl font-semibold">
+            INSTRUMENT UNDER REVIEWER / APPROVER
+          </div>
           <div className="cursor-pointer hover:text-red-700" onClick={toggleDrawer(false)}>
             X
           </div>
         </div>
-        <div className="p-2">
-          <table className="w-full">
+        <div className="p-2 overflow-x-auto">
+          <table className="min-w-full bg-white border border-gray-300">
             <thead>
               <tr>
-                <th className="px-4 py-2">S.No</th>
-                <th className="px-4 py-2">MACHINE ID</th>
-                <th className="px-4 py-2">MACHINE NAME</th>
-                <th className="px-4 py-2">LOCATION</th>
-                <th className="px-4 py-2">DEPARTMENT</th>
-                <th className="px-4 py-2">WORKFLOW</th>
-                <th className="px-4 py-2">ACTION</th>
+                <th className="px-4 py-2 border border-gray-300">S.No</th>
+                <th className="px-4 py-2 border border-gray-300">MACHINE ID</th>
+                <th className="px-4 py-2 border border-gray-300">MACHINE NAME</th>
+                <th className="px-4 py-2 border border-gray-300">LOCATION</th>
+                <th className="px-4 py-2 border border-gray-300">DEPARTMENT</th>
+                <th className="px-4 py-2 border border-gray-300">WORKFLOW</th>
+                <th className="px-4 py-2 border border-gray-300">ACTION</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="px-4 py-2">1</td>
-                <td className="px-4 py-2">M008</td>
-                <td className="px-4 py-2">Test Machine 08</td>
-                <td className="px-4 py-2">Warehouse</td>
-                <td className="px-4 py-2">Developer</td>
-                <td className="px-4 py-2">WorkFlow 02</td>
-                <td className="px-4 py-2">
+                <td className="px-4 py-2 border border-gray-300">1</td>
+                <td className="px-4 py-2 border border-gray-300">M008</td>
+                <td className="px-4 py-2 border border-gray-300">Test Machine 08</td>
+                <td className="px-4 py-2 border border-gray-300">Warehouse</td>
+                <td className="px-4 py-2 border border-gray-300">Developer</td>
+                <td className="px-4 py-2 border border-gray-300">WorkFlow 02</td>
+                <td className="px-4 py-2 border border-gray-300">
                   <div className="flex gap-2">
-                    <button className="bg-indigo-500 text-white p-1">Approve</button>
-                    <button className="bg-red-500 p-1 text-white">Reject</button>
+                    <button className="bg-indigo-500 text-white px-2 py-1 rounded">Approve</button>
+                    <button className="bg-red-500 text-white px-2 py-1 rounded">Reject</button>
                   </div>
                 </td>
               </tr>
@@ -60,7 +62,7 @@ const Dashboard = () => {
       </div>
     </Box>
   );
-  
+
   return (
     <div className="bg-gray-100 header">
       <Header />
@@ -77,8 +79,10 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
-        <div className="col-span-1 lg:col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,1)] p-4">
-          <MyLineChart />
+        <div className="col-span-1 lg:col-span-2 bg-white drop-shadow-md p-4">
+          <div className="w-full overflow-x-auto">
+            <MyLineChart />
+          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div
@@ -134,10 +138,12 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
-        <div className="col-span-1 lg:col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,1)] p-4">
-          <MyLineChart chartType="bar" />
+        <div className="col-span-1 lg:col-span-2 bg-white drop-shadow-md p-4">
+          <div className="w-full overflow-x-auto">
+            <MyLineChart chartType="bar" />
+          </div>
         </div>
-        <div className="bg-white p-4 drop-shadow-[0_15px_15px_rgba(80,75,69,1)]">
+        <div className="bg-white p-4 drop-shadow-md">
           <MyCalendar />
         </div>
       </div>

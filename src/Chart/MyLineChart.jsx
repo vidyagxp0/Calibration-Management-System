@@ -61,9 +61,9 @@ const MyLineChart = ({ chartType = 'line' }) => {
     ],
   };
 
-
   const options = {
     responsive: true,
+    maintainAspectRatio: false, 
     plugins: {
       legend: {
         position: 'top',
@@ -79,13 +79,17 @@ const MyLineChart = ({ chartType = 'line' }) => {
       },
     },
   };
+
   const ChartComponent = chartType === 'bar' ? Bar : Line;
+
   return (
-    <div className='p-2'>
-    <h2 className='text-[14px] font-medium'>Over Year</h2>
-    <p className='text-[12px]'>Calibration status.</p>
-    <ChartComponent data={data} options={options} />
-  </div>
+    <div className="p-2 w-full h-[300px] sm:h-[400px] lg:h-[500px]">
+      <h2 className="text-[14px] font-medium">Over Year</h2>
+      <p className="text-[12px]">Calibration status.</p>
+      <div className="relative w-full h-full">
+        <ChartComponent data={data} options={options} />
+      </div>
+    </div>
   );
 };
 

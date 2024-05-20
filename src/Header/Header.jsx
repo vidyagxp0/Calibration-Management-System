@@ -59,7 +59,7 @@ const Header = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="text-gray-500 focus:outline-none"
         >
-          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+          {isMobileMenuOpen ? <MenuIcon /> : <MenuIcon />}
         </button>
       </div>
       <div className={`md:flex ${isMobileMenuOpen ? "block" : "hidden"} mt-4 md:mt-0  flex justify-end  `}>
@@ -232,7 +232,7 @@ const Header = () => {
                     className="dropdown-item"
                     onClick={() => {
                       navigate("/machine-report");
-                      setIsWorkOpen(!isWorkOpen);
+                      setIsWorkOpen(!isWorkOpen);                                  
                     }}
                   >
                     Machine Report
