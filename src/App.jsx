@@ -21,6 +21,7 @@ import ReSchedulePlan from "./Work Place/Planners/ReSchedulePlan";
 import MachineReport from "./Work Place/Reports/MachineReport";
 import ScheduleReport from "./Work Place/Reports/ScheduleReport";
 import CertificateMaster from "./Work Place/Reports/CertificateMaster";
+import ExecutionUnderApprover from "./Dashboard/ExecutionUnderApprover";
 
 function App() {
   return (
@@ -30,13 +31,14 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route
-            path="/schedule-under-executon"
+            path="/schedule-under-execution"
             element={<ScheduleUnderExecution />}
           />
           <Route
             path="/execution-under-reviewer"
             element={<ExecutionUnderReviewer />}
           />
+          <Route path="/execution-under-approver" element={<ExecutionUnderApprover/>}/>
           <Route path="/audit-trail" element={<AuditTrail />} />
           <Route path="/work-flow" element={<WorkFlow />} />
           <Route path="/department" element={<Department />} />
