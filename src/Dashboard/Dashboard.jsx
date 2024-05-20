@@ -9,54 +9,48 @@ import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+
   const toggleDrawer = (newOpen) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
+    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
       return;
     }
     setOpen(newOpen);
   };
 
   const DrawerList = () => (
-    <Box sx={{ width: "1000px" }}>
+    <Box sx={{ width: { xs: "90vw", sm: "60vw", md: "60vw", lg: "60vw" } }}>
       <div role="presentation">
         <div className="flex justify-between p-2 border border-gray-500">
           <div>INSTRUMENT UNDER REVIEWER / APPROVER</div>
-          <div
-            className=" cursor-pointer hover:text-red-700"
-            onClick={toggleDrawer(false)}
-          >
+          <div className="cursor-pointer hover:text-red-700" onClick={toggleDrawer(false)}>
             X
           </div>
         </div>
         <div className="p-2">
-          <table>
+          <table className="w-full">
             <thead>
               <tr>
-                <th>S.No</th>
-                <th>MACHINE ID</th> <th>MACHINE NAME</th> <th>LOCATION</th>{" "}
-                <th>DEPARTMENT</th> <th>WORKFLOW</th>
-                <th> ACTION</th>
+                <th className="px-4 py-2">S.No</th>
+                <th className="px-4 py-2">MACHINE ID</th>
+                <th className="px-4 py-2">MACHINE NAME</th>
+                <th className="px-4 py-2">LOCATION</th>
+                <th className="px-4 py-2">DEPARTMENT</th>
+                <th className="px-4 py-2">WORKFLOW</th>
+                <th className="px-4 py-2">ACTION</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>1</td>
-                <td>M008</td>
-                <td>Test Machine 08</td>
-                <td>warehouse</td>
-                <td>Developer</td>
-                <td>WorkFlow 02</td>
-                <td>
+                <td className="px-4 py-2">1</td>
+                <td className="px-4 py-2">M008</td>
+                <td className="px-4 py-2">Test Machine 08</td>
+                <td className="px-4 py-2">Warehouse</td>
+                <td className="px-4 py-2">Developer</td>
+                <td className="px-4 py-2">WorkFlow 02</td>
+                <td className="px-4 py-2">
                   <div className="flex gap-2">
-                    <button className="bg-indigo-500 text-white p-1 ">
-                      Approve
-                    </button>
-                    <button className="bg-red-500 p-1 text-white">
-                      Reject
-                    </button>
+                    <button className="bg-indigo-500 text-white p-1">Approve</button>
+                    <button className="bg-red-500 p-1 text-white">Reject</button>
                   </div>
                 </td>
               </tr>
@@ -66,114 +60,89 @@ const Dashboard = () => {
       </div>
     </Box>
   );
-
+  
   return (
     <div className="bg-gray-100 header">
       <Header />
 
-      <div className="px-5 flex justify-between border border-b-gray-800 pb-2 ">
-        <div className="">
-          <div className="text-[22px] font-bold"> Hi, welcome back!</div>{" "}
-          <div className="text-[14px] font-medium">
-            Your schedule management dashboard.
-          </div>
+      <div className="px-5 flex flex-col sm:flex-row justify-between border-b border-gray-800 pb-2">
+        <div className="mb-2 sm:mb-0">
+          <div className="text-xl sm:text-2xl font-bold">Hi, welcome back!</div>
+          <div className="text-sm sm:text-base font-medium">Your schedule management dashboard.</div>
         </div>
-        <div className="">
-          <div className="text-[12px] text-gray-600 font-medium">TODAY</div>
-          <div className="text-[18px] font-medium">Wed, 15 May 2024</div>
+        <div>
+          <div className="text-xs sm:text-sm text-gray-600 font-medium">TODAY</div>
+          <div className="text-lg sm:text-xl font-medium">Wed, 15 May 2024</div>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 p-4">
-        <div className="col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,1)]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
+        <div className="col-span-1 lg:col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,1)] p-4">
           <MyLineChart />
         </div>
-
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div
-            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-3"
+            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-3 cursor-pointer"
             onClick={toggleDrawer(true)}
           >
-            <div className="text-[24px] text-white">1</div>
-            <div className="text-[14px] text-white">
-              {" "}
-              INSTRUMENT UNDER REVIEWER
-            </div>
+            <div className="text-2xl text-white">1</div>
+            <div className="text-sm text-white">INSTRUMENT UNDER REVIEWER</div>
           </div>
           <div
-            onClick={toggleDrawer(true)}
-            className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-3"
-          >
-            <div className="text-[24px] text-white">0</div>
-            <div className="text-[14px] text-white">
-              INSTRUMENT UNDER APPROVER
-            </div>
-          </div>
-          <div
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3"
+            className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-3 cursor-pointer"
             onClick={toggleDrawer(true)}
           >
-            <div className="text-[24px] text-white">1</div>
-            <div className="text-[14px] text-white">
-              SCHEDULE UNDER REVIEWER
-            </div>
+            <div className="text-2xl text-white">0</div>
+            <div className="text-sm text-white">INSTRUMENT UNDER APPROVER</div>
           </div>
           <div
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3"
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3 cursor-pointer"
             onClick={toggleDrawer(true)}
           >
-            <div className="text-[24px] text-white">0</div>
-            <div className="text-[14px] text-white">
-              {" "}
-              SCHEDULE UNDER APPROVER
-            </div>
+            <div className="text-2xl text-white">1</div>
+            <div className="text-sm text-white">SCHEDULE UNDER REVIEWER</div>
           </div>
           <div
-            className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% col-start-1 col-end-3 p-3"
-            onClick={() => navigate("/schedule-under-executon")}
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3 cursor-pointer"
+            onClick={toggleDrawer(true)}
           >
-            <div className="text-[24px] text-white">6</div>{" "}
-            <div className="text-[14px] text-white">
-              SCHEDULE UNDER EXECUTION
-            </div>{" "}
+            <div className="text-2xl text-white">0</div>
+            <div className="text-sm text-white">SCHEDULE UNDER APPROVER</div>
           </div>
           <div
-            className="bg-gradient-to-r from-indigo-500 to-green-400 p-3 "
+            className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-3 cursor-pointer col-span-1 sm:col-span-2"
+            onClick={() => navigate("/schedule-under-execution")}
+          >
+            <div className="text-2xl text-white">6</div>
+            <div className="text-sm text-white">SCHEDULE UNDER EXECUTION</div>
+          </div>
+          <div
+            className="bg-gradient-to-r from-indigo-500 to-green-400 p-3 cursor-pointer"
             onClick={() => navigate("/execution-under-reviewer")}
           >
-            <div className="text-[24px] text-white">1</div>
-            <div className="text-[14px] text-white">
-              EXECUTION UNDER REVIEWER
-            </div>
+            <div className="text-2xl text-white">1</div>
+            <div className="text-sm text-white">EXECUTION UNDER REVIEWER</div>
           </div>
           <div
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3"
-            onClick={() => navigate("/schedule-under-executon")}
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3 cursor-pointer"
+            onClick={() => navigate("/execution-under-approver")}
           >
-            <div className="text-[24px] text-white">0</div>
-            <div className="text-[14px] text-white">
-              {" "}
-              EXECUTION UNDER APPROVER
-            </div>
+            <div className="text-2xl text-white">0</div>
+            <div className="text-sm text-white">EXECUTION UNDER APPROVER</div>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 p-4 ">
-        <div className="col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,1)]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
+        <div className="col-span-1 lg:col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,1)] p-4">
           <MyLineChart chartType="bar" />
         </div>
-        <div className="bg-white p-2 drop-shadow-[0_15px_15px_rgba(80,75,69,1)]">
+        <div className="bg-white p-4 drop-shadow-[0_15px_15px_rgba(80,75,69,1)]">
           <MyCalendar />
         </div>
       </div>
 
-      <Drawer
-        anchor="left"
-        open={open}
-        onClose={toggleDrawer(false)}
-        className=""
-      >
+      <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>
         <DrawerList />
       </Drawer>
     </div>
