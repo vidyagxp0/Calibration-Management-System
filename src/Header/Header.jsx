@@ -248,7 +248,7 @@ const Header = () => {
           />
           {isLogoutOpen && (
             <div className="dropdown w-[280px]">
-              <div className="dropdown-item text-center">Admin</div>
+              <div className="dropdown-item text-center">Pankaj</div>
               <div className="p-2">
                 <button
                   className="p-3 bg-red-500 text-white w-full"

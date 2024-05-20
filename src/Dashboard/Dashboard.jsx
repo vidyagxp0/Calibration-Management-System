@@ -85,7 +85,7 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-4 p-4">
-        <div className="col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,0.50)]">
+        <div className="col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,1)]">
           <MyLineChart />
         </div>
 
@@ -160,10 +160,10 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-4 p-4 ">
-        <div className="col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,0.50)]">
+        <div className="col-span-2 bg-white drop-shadow-[0_15px_15px_rgba(80,75,69,1)]">
           <MyLineChart chartType="bar" />
         </div>
-        <div className="bg-white p-2 drop-shadow-[0_15px_15px_rgba(80,75,69,0.50)]">
+        <div className="bg-white p-2 drop-shadow-[0_15px_15px_rgba(80,75,69,1)]">
           <MyCalendar />
         </div>
       </div>

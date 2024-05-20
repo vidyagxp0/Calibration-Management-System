@@ -1,12 +1,12 @@
 .login-container {
     background: url("https://media.licdn.com/dms/image/C4D12AQHOvHjj16E39Q/article-cover_image-shrink_720_1280/0/1622792438311?e=2147483647&v=beta&t=3YtUTpKybJLcaogbeUdUfJpoIViZZ_4amU6HJkGc0Qk") no-repeat center center fixed;
     background-size: cover;
-    height: 100vh; /* or 100% */
+    height: 100vh;
     width: 100vw;
-   
-}
-
-.card{
+  }
+  
+  .card {
     box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.4);
     background-color: rgba(177, 192, 203, 0.8);
-}
+  }
+  
