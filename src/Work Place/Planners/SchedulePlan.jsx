@@ -3,17 +3,17 @@ import Header from "../../Header/Header";
 
 const SchedulePlan = () => {
   return (
-    <div className="bg-gray-100 h-full">
+    <div className="bg-gray-100 min-h-screen">
       <Header />
-      <div className="p-2 flex justify-between border border-b-gray-400">
+      <div className="p-2 flex flex-col md:flex-row justify-between border-b border-gray-400">
         <div className="text-[20px] font-medium">WorkFlow Master</div>
         <div className="text-[20px] font-medium">Action Area</div>
       </div>
-      <div className="grid grid-cols-5 gap-4 p-2">
-        <div className="col-span-3">
-          <div className="flex justify-between pb-3 border border-b-gray-500">
-            <div className="flex gap-3 pb-3">
-              <div className="flex flex-col pt-4 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 p-2">
+        <div className="md:col-span-3">
+          <div className="flex flex-col md:flex-row justify-between pb-3 border-b border-gray-500">
+            <div className="flex flex-wrap gap-3 pb-3">
+              <div className="flex flex-col pt-4 gap-3 w-full md:w-auto">
                 <label className="font-medium">Start Date</label>
                 <input
                   type="date"
@@ -21,7 +21,7 @@ const SchedulePlan = () => {
                   className="border border-gray-500 rounded p-2 w-full"
                 />
               </div>
-              <div className="flex flex-col pt-4 gap-3">
+              <div className="flex flex-col pt-4 gap-3 w-full md:w-auto">
                 <label className="font-medium">End Date</label>
                 <input
                   type="date"
@@ -29,7 +29,7 @@ const SchedulePlan = () => {
                   className="border border-gray-500 rounded p-2 w-full"
                 />
               </div>
-              <div className="flex flex-col pt-4 gap-3">
+              <div className="flex flex-col pt-4 gap-3 w-full md:w-auto">
                 <label className="font-medium">Instrument</label>
                 <select className="border border-gray-500 rounded p-[10px] w-full">
                   <option>Select Instrument</option>
@@ -37,10 +37,12 @@ const SchedulePlan = () => {
                 </select>
               </div>
             </div>
-            <button className="p-2 px-4 bg-blue-600 text-white mt-[58px] rounded">Get</button>
+            <button className="p-2 px-4 bg-blue-600 text-white mt-4 md:mt-[58px] rounded w-full md:w-auto">
+              Get
+            </button>
           </div>
 
-          <div className="py-4">
+          <div className="py-4 overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
                 <tr>
@@ -60,7 +62,7 @@ const SchedulePlan = () => {
                   <td className="border p-2">07-12-2022</td>
                   <td className="border p-2">true</td>
                   <td className="border p-2">
-                    <div className="flex gap-4">
+                    <div className="flex gap-2">
                       <button className="p-1 bg-yellow-500 text-white">
                         Edit
                       </button>
@@ -77,18 +79,18 @@ const SchedulePlan = () => {
             </table>
           </div>
         </div>
-        <div className="col-span-2">
-          <div className="p-2 border border-l-gray-400">
-            <div className="flex justify-between gap-4 border border-b-gray-400 pb-3">
-              <div className="flex flex-col pt-4 gap-3">
+        <div className="md:col-span-2">
+          <div className="p-2 border-l border-gray-400">
+            <div className="flex flex-col md:flex-row justify-between gap-4 border-b border-gray-400 pb-3">
+              <div className="flex flex-col pt-4 gap-3 w-full md:w-auto">
                 <label className="font-medium">Instrument</label>
                 <select className="border border-gray-500 rounded p-[10px] w-full">
-                    <option>Select Instrument</option>
+                  <option>Select Instrument</option>
                 </select>
               </div>
-              <div >
-              <button className="px-3 py-2 bg-gray-500 text-white mt-[55px]">Get</button>
-              </div>
+              <button className="px-3 py-2 bg-gray-500 text-white mt-4 md:mt-[55px] w-full md:w-auto">
+                Get
+              </button>
             </div>
 
             <div className="pt-3">
@@ -97,8 +99,8 @@ const SchedulePlan = () => {
                   <thead className="sticky top-0 bg-white">
                     <tr>
                       <th className="border p-2">S.No.</th>
-                      <th className="border p-2">DUE  DATE</th>
-                      <th className="border p-2">	PLAN DATE</th>
+                      <th className="border p-2">DUE DATE</th>
+                      <th className="border p-2">PLAN DATE</th>
                       <th className="border p-2">EXTEND PLAN DATE</th>
                       <th className="border p-2">ACTION</th>
                     </tr>

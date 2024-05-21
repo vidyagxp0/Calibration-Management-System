@@ -8,8 +8,8 @@ const ReSchedulePlan = () => {
      <div className="p-2 flex justify-between border border-b-gray-400">
         <div className="text-[20px] font-medium">Re-Schedule</div>
       </div> 
-      <div className='p-2'>
-        <table>
+      <div className='p-2 overflow-x-auto'>
+        <table className="min-w-full">
           <thead>
             <tr>
               <th>S.No.</th>

@@ -192,54 +192,53 @@ const ScheduleReport = () => {
   ];
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 min-h-screen">
       <Header />
       <div className="px-4 py-3">
         <div className="text-[24px] font-semibold">Schedule Report</div>
-        <div className="p-2">
-          <table className="machine-report-table">
-            <thead>
-              <tr>
-                <th rowSpan="2">#</th>
-                <th rowSpan="2">MACHINEID</th>
-                <th rowSpan="2">SCHEDULETYPE</th>
-                <th rowSpan="2">TYPE</th>
-                <th rowSpan="2">FREQUENCY</th>
-                <th rowSpan="2">INSTALLATION DATE</th>
-                <th colSpan="3">SCHEDULE</th>
-                <th rowSpan="2">CHECKLISTID</th>
-                <th rowSpan="2">DEPARTMENT</th>
-                <th rowSpan="2">CREATEDDATE</th>
-                <th rowSpan="2">STATUS</th>
+      </div>
+      <div className="p-4 overflow-x-auto">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">#</th>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">MACHINEID</th>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">SCHEDULETYPE</th>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">TYPE</th>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">FREQUENCY</th>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">INSTALLATION DATE</th>
+              <th colSpan="3" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">SCHEDULE</th>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">CHECKLISTID</th>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">DEPARTMENT</th>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">CREATEDDATE</th>
+              <th rowSpan="2" className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">STATUS</th>
+            </tr>
+            <tr>
+              <th className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">PLANDATE</th>
+              <th className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">DONEDATE</th>
+              <th className="px-4 py-2 text-left text-xs font-medium text-white uppercase tracking-wider">DUEDATE</th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {data.map((machine, index) => (
+              <tr key={`${machine.machineId}-${index}`}>
+                <td className="px-4 py-2 whitespace-nowrap">{index + 1}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.machineId}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.scheduleType}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.type}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.frequency}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.installationDate}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.SCHEDULE.planDate}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.SCHEDULE.doneDate}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.SCHEDULE.dueDate}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.checklistId}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.department}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{machine.createDate}</td>
+                <td className={`px-4 py-2 whitespace-nowrap ${machine.status === 'Completed' ? 'text-green-500' : machine.status === 'Overdue' ? 'text-red-500' : 'text-yellow-500'}`}>{machine.status}</td>
               </tr>
-              <tr>
-                <th>PLANDATE</th>
-                <th>DONEDATE</th>
-                <th>DUEDATE</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((machine, index) => (
-                <tr key={machine.MACHINEID}>
-                  <td>{index + 1}</td>
-                  <td>{machine.machineId}</td>
-                  <td>{machine.scheduleType}</td>
-                  <td>{machine.type}</td>
-                  <td>{machine.frequency}</td>
-                  <td>{machine.installationDate}</td>
-                  <td>{machine.SCHEDULE.planDate}</td>
-                  <td>{machine.SCHEDULE.doneDate}</td>
-                  <td>{machine.SCHEDULE.dueDate}</td>
-                 
-                  <td>{machine.checklistId}</td>
-                  <td>{machine.department}</td>
-                  <td>{machine.createDate}</td>
-                  <td>{machine.status}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

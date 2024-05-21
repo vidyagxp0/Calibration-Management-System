@@ -6,6 +6,7 @@ import { Box, Drawer } from "@mui/material";
 const FunctionLocation = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+
   const toggleDrawer = (newOpen) => (event) => {
     if (
       event.type === "keydown" &&
@@ -17,12 +18,12 @@ const FunctionLocation = () => {
   };
 
   const DrawerList = () => (
-    <Box sx={{ width: "500px" }}>
+    <Box sx={{ width: { xs: "100%", sm: "500px" } }}>
       <div role="presentation">
-        <div className="flex justify-between p-2 border border-gray-500">
+        <div className="flex justify-between p-2 border-b border-gray-500">
           <div className="font-medium">Function Location</div>
           <div
-            className=" cursor-pointer hover:text-red-700"
+            className="cursor-pointer hover:text-red-700"
             onClick={toggleDrawer(false)}
           >
             X
@@ -33,7 +34,6 @@ const FunctionLocation = () => {
             <label className="font-medium">Code</label>
             <input
               type="text"
-              placeholder=""
               className="border border-gray-500 rounded p-2"
             />
           </div>
@@ -41,7 +41,6 @@ const FunctionLocation = () => {
             <label className="font-medium">Name</label>
             <input
               type="text"
-              placeholder=""
               className="border border-gray-500 rounded p-2"
             />
           </div>
@@ -49,7 +48,6 @@ const FunctionLocation = () => {
             <label className="font-medium">Description</label>
             <input
               type="text"
-              placeholder=""
               className="border border-gray-500 rounded p-2"
             />
           </div>
@@ -61,12 +59,12 @@ const FunctionLocation = () => {
       </div>
     </Box>
   );
+
   return (
-    <div className="bg-gray-100 h-[100vh]">
+    <div className="bg-gray-100 min-h-screen">
       <Header />
       <div className="px-4 py-3 flex justify-between">
-        <div className="text-[24px] font-semibold">
-          {" "}
+        <div className="text-2xl font-semibold">
           Function Location Master
         </div>
         <div>
@@ -79,26 +77,25 @@ const FunctionLocation = () => {
         </div>
       </div>
 
-      <div className="py-2">
-        <table>
-          <thead>
+      <div className="py-2 px-4 overflow-x-auto">
+        <table className="min-w-full border-collapse">
+          <thead className="bg-gray-200">
             <tr>
-              <th>S.No.</th>
-              <th>CODE</th>
-              <th>NAME</th>
-              <th>DESCRIPTION</th>
-              <th>ACTION</th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">S.No.</th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">CODE</th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">NAME</th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">DESCRIPTION</th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">ACTION</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>FL001</td>
-              <td>Function RD</td>
-              <td>Test Location</td>
-              <td>
-                {" "}
-                <div className="flex gap-4">
+            <tr className="border-b border-gray-300">
+              <td className="px-4 py-2">1</td>
+              <td className="px-4 py-2">FL001</td>
+              <td className="px-4 py-2">Function RD</td>
+              <td className="px-4 py-2">Test Location</td>
+              <td className="px-4 py-2">
+                <div className="flex gap-2 md:gap-4">
                   <button
                     className="p-1 bg-yellow-500 text-white"
                     onClick={toggleDrawer(true)}
@@ -107,7 +104,7 @@ const FunctionLocation = () => {
                   </button>
                   <button
                     className="p-1 bg-red-500 text-white"
-                    onClick={() => alert("Are You Want To Delete")}
+                    onClick={() => alert("Are You Sure You Want To Delete?")}
                   >
                     Delete
                   </button>
@@ -121,7 +118,6 @@ const FunctionLocation = () => {
         anchor="right"
         open={open}
         onClose={toggleDrawer(false)}
-        className=""
       >
         <DrawerList />
       </Drawer>

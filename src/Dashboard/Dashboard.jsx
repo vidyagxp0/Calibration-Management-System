@@ -11,20 +11,26 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const toggleDrawer = (newOpen) => (event) => {
-    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
     setOpen(newOpen);
   };
 
   const DrawerList = () => (
-    <Box sx={{ width: { xs: '90vw', sm: '60vw', md: '60vw', lg: '60vw' } }}>
+    <Box sx={{ width: { xs: "90vw", sm: "60vw", md: "60vw", lg: "60vw" } }}>
       <div role="presentation">
         <div className="flex justify-between p-2 border border-gray-500">
           <div className="text-sm md:text-lg lg:text-xl font-semibold">
             INSTRUMENT UNDER REVIEWER / APPROVER
           </div>
-          <div className="cursor-pointer hover:text-red-700" onClick={toggleDrawer(false)}>
+          <div
+            className="cursor-pointer hover:text-red-700"
+            onClick={toggleDrawer(false)}
+          >
             X
           </div>
         </div>
@@ -34,7 +40,9 @@ const Dashboard = () => {
               <tr>
                 <th className="px-4 py-2 border border-gray-300">S.No</th>
                 <th className="px-4 py-2 border border-gray-300">MACHINE ID</th>
-                <th className="px-4 py-2 border border-gray-300">MACHINE NAME</th>
+                <th className="px-4 py-2 border border-gray-300">
+                  MACHINE NAME
+                </th>
                 <th className="px-4 py-2 border border-gray-300">LOCATION</th>
                 <th className="px-4 py-2 border border-gray-300">DEPARTMENT</th>
                 <th className="px-4 py-2 border border-gray-300">WORKFLOW</th>
@@ -45,14 +53,22 @@ const Dashboard = () => {
               <tr>
                 <td className="px-4 py-2 border border-gray-300">1</td>
                 <td className="px-4 py-2 border border-gray-300">M008</td>
-                <td className="px-4 py-2 border border-gray-300">Test Machine 08</td>
+                <td className="px-4 py-2 border border-gray-300">
+                  Test Machine 08
+                </td>
                 <td className="px-4 py-2 border border-gray-300">Warehouse</td>
                 <td className="px-4 py-2 border border-gray-300">Developer</td>
-                <td className="px-4 py-2 border border-gray-300">WorkFlow 02</td>
+                <td className="px-4 py-2 border border-gray-300">
+                  WorkFlow 02
+                </td>
                 <td className="px-4 py-2 border border-gray-300">
                   <div className="flex gap-2">
-                    <button className="bg-indigo-500 text-white px-2 py-1 rounded">Approve</button>
-                    <button className="bg-red-500 text-white px-2 py-1 rounded">Reject</button>
+                    <button className="bg-indigo-500 text-white px-2 py-1 rounded">
+                      Approve
+                    </button>
+                    <button className="bg-red-500 text-white px-2 py-1 rounded">
+                      Reject
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -70,10 +86,14 @@ const Dashboard = () => {
       <div className="px-5 flex flex-col sm:flex-row justify-between border-b border-gray-800 pb-2">
         <div className="mb-2 sm:mb-0">
           <div className="text-xl sm:text-2xl font-bold">Hi, welcome back!</div>
-          <div className="text-sm sm:text-base font-medium">Your schedule management dashboard.</div>
+          <div className="text-sm sm:text-base font-medium">
+            Your schedule management dashboard.
+          </div>
         </div>
         <div>
-          <div className="text-xs sm:text-sm text-gray-600 font-medium">TODAY</div>
+          <div className="text-xs sm:text-sm text-gray-600 font-medium">
+            TODAY
+          </div>
           <div className="text-lg sm:text-xl font-medium">Wed, 15 May 2024</div>
         </div>
       </div>

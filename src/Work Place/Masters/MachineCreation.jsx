@@ -17,18 +17,18 @@ const MachineCreation = () => {
   };
 
   const DrawerList = () => (
-    <Box sx={{ width: "900px" }}>
+    <Box sx={{ width: { xs: "90vw", sm: "600px", md: "900px" } }}>
       <div role="presentation">
         <div className="flex justify-between p-2 border border-gray-500">
           <div className="font-medium">Assets Master</div>
           <div
-            className=" cursor-pointer hover:text-red-700"
+            className="cursor-pointer hover:text-red-700"
             onClick={toggleDrawer(false)}
           >
             X
           </div>
         </div>
-        <div className="p-2 grid grid-cols-3 gap-4">
+        <div className="p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="flex flex-col pt-4 gap-3">
             <label className="font-medium">Assets Id</label>
             <input
@@ -45,23 +45,19 @@ const MachineCreation = () => {
               className="border border-gray-500 rounded p-2"
             />
           </div>
-          <div className="flex flex-col pt-[22px]">
-            <label className="text-[14px] font-medium pb-2">
-              Assets Department
-            </label>
-            <select className="p-[9px] text-center border border-gray-500 rounded">
-              <option>Select Assets Department </option>
+          <div className="flex flex-col pt-4 gap-3">
+            <label className="font-medium">Assets Department</label>
+            <select className="p-2 text-center border border-gray-500 rounded">
+              <option>Select Assets Department</option>
               <option>Developer</option>
               <option>RC Update</option>
               <option>Sales</option>
             </select>
           </div>
-          <div className="flex flex-col pt-[22px]">
-            <label className="text-[14px] font-medium pb-2">
-              AssetsFunctional Location
-            </label>
-            <select className="p-[10px] text-center border border-gray-500 rounded">
-              <option>Select AssetsFunctional Location</option>
+          <div className="flex flex-col pt-4 gap-3">
+            <label className="font-medium">Assets Functional Location</label>
+            <select className="p-2 text-center border border-gray-500 rounded">
+              <option>Select Assets Functional Location</option>
               <option>Function RD</option>
               <option>Function Test Update</option>
             </select>
@@ -74,35 +70,33 @@ const MachineCreation = () => {
               className="border border-gray-500 rounded p-2"
             />
           </div>
-          <div className="flex flex-col pt-[22px]">
-            <label className="text-[14px] font-medium pb-2">
-              Assets Workflow
-            </label>
-            <select className="p-[10px] text-center border border-gray-500 rounded">
+          <div className="flex flex-col pt-4 gap-3">
+            <label className="font-medium">Assets Workflow</label>
+            <select className="p-2 text-center border border-gray-500 rounded">
               <option>Select Assets Workflow</option>
               <option>WorkFlow 01</option>
               <option>WorkFlow 02</option>
               <option>WorkFlow 03</option>
             </select>
           </div>
-          <div className="flex flex-col pt-[10px]">
-            <label className="text-[14px] font-medium pb-2">Checklist</label>
-            <select className="p-[10px] text-center border border-gray-500 rounded">
+          <div className="flex flex-col pt-4 gap-3">
+            <label className="font-medium">Checklist</label>
+            <select className="p-2 text-center border border-gray-500 rounded">
               <option>Select Checklist</option>
               <option>Checklist 01</option>
               <option>Checklist 02</option>
               <option>Checklist 03</option>
             </select>
           </div>
-          <div className="flex flex-col  gap-3">
-            <label className="font-medium">Range </label>
+          <div className="flex flex-col pt-4 gap-3">
+            <label className="font-medium">Range</label>
             <input
               type="text"
               placeholder=""
               className="border border-gray-500 rounded p-2"
             />
           </div>
-          <div className="flex flex-col  gap-3">
+          <div className="flex flex-col pt-4 gap-3">
             <label className="font-medium">Accuracy</label>
             <input
               type="text"
@@ -127,7 +121,7 @@ const MachineCreation = () => {
             />
           </div>
           <div className="flex flex-col pt-4 gap-3">
-            <label className="font-medium">Temprature</label>
+            <label className="font-medium">Temperature</label>
             <input
               type="text"
               placeholder=""
@@ -135,21 +129,21 @@ const MachineCreation = () => {
             />
           </div>
           <div className="flex flex-col pt-4 gap-3">
-            <label className="font-medium">Relative Humadity</label>
+            <label className="font-medium">Relative Humidity</label>
             <input
               type="text"
               placeholder=""
               className="border border-gray-500 rounded p-2"
             />
-          </div>{" "}
+          </div>
           <div className="flex flex-col pt-4 gap-3">
-            <label className="font-medium">IS Strandard</label>
+            <label className="font-medium">IS Standard</label>
             <input
               type="text"
               placeholder=""
               className="border border-gray-500 rounded p-2"
             />
-          </div>{" "}
+          </div>
           <div className="flex flex-col pt-4 gap-3">
             <label className="font-medium">Remark</label>
             <input
@@ -167,6 +161,7 @@ const MachineCreation = () => {
       </div>
     </Box>
   );
+
   const data = [
     {
       assetsId: "M001",
@@ -227,13 +222,14 @@ const MachineCreation = () => {
       status: "Completed",
     },
   ];
+
   return (
-    <div className="bg-gray-100 h-[100vh]">
+    <div className="bg-gray-100 min-h-screen">
       <Header />
-      <div className="px-4 py-3 flex justify-between">
-        <div className="text-[24px] font-semibold"> Assets Master</div>
-        <div>
-          <select className="p-[10px] mr-3">
+      <div className="px-4 py-3 flex flex-col md:flex-row md:justify-between">
+        <div className="text-2xl font-semibold">Assets Master</div>
+        <div className="flex gap-2 items-center mt-3 md:mt-0">
+          <select className="p-2  sm:mb-0 sm:mr-3">
             <option>Select Status</option>
             <option>Active</option>
             <option>InActive</option>
@@ -248,8 +244,8 @@ const MachineCreation = () => {
         </div>
       </div>
 
-      <div className="p-2">
-        <table>
+      <div className="p-2 overflow-x-auto">
+        <table className="min-w-full">
           <thead>
             <tr>
               <th>S.No.</th>
@@ -259,53 +255,48 @@ const MachineCreation = () => {
               <th>ASSETS DEPARTMENT</th>
               <th>ASSETS VERSION</th>
               <th>CREATED BY</th>
-              <th>CREATED DATE </th>
+              <th>CREATED DATE</th>
               <th>STATUS</th>
               <th>ACTION</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((itm, index) => {
-              return (
-                <tr>
-                  <td>{index + 1}</td>
-                  <td>{itm.assetsId}</td>
-                  <td>{itm.assetsName}</td>
-                  <td>{itm.assetLocation}</td>
-                  <td>{itm.assetsDepartment}</td>
-                  <td>{itm.assetsVersion}</td>
-                  <td>{itm.createdBy}</td>
-                  <td>{itm.createdDate}</td>
-                  <td>{itm.status}</td>
-                  <td>
-                    {" "}
-                    <div className="flex gap-2">
-                      <button className="p-1 bg-yellow-500 text-white" onClick={toggleDrawer(true)}>
-                        Edit
-                      </button>
-                      <button
-                        className="p-1 bg-red-500 text-white"
-                        onClick={() => alert("Are You Want To Block")}
-                      >
-                        Block
-                      </button>
-                      <button className="p-1 bg-yellow-500 text-white">
-                        History
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              );
-            })}
+            {data.map((itm, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{itm.assetsId}</td>
+                <td>{itm.assetsName}</td>
+                <td>{itm.assetLocation}</td>
+                <td>{itm.assetsDepartment}</td>
+                <td>{itm.assetsVersion}</td>
+                <td>{itm.createdBy}</td>
+                <td>{itm.createdDate}</td>
+                <td>{itm.status}</td>
+                <td>
+                  <div className="flex gap-2">
+                    <button
+                      className="p-1 bg-yellow-500 text-white"
+                      onClick={toggleDrawer(true)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="p-1 bg-red-500 text-white"
+                      onClick={() => alert("Are You Want To Block")}
+                    >
+                      Block
+                    </button>
+                    <button className="p-1 bg-yellow-500 text-white">
+                      History
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
-      <Drawer
-        anchor="right"
-        open={open}
-        onClose={toggleDrawer(false)}
-        className=""
-      >
+      <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
         <DrawerList />
       </Drawer>
     </div>

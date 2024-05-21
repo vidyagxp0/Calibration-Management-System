@@ -17,7 +17,7 @@ const MasterTools = () => {
       };
     
       const DrawerList = () => (
-        <Box sx={{ width: "500px" }}>
+        <Box sx={{ width: { xs: "100%", sm: "500px" } }}>
           <div
             role="presentation"
           >
@@ -61,11 +61,11 @@ const MasterTools = () => {
     <div className='bg-gray-100 h-[100vh]'>
     <Header/>
     <div className='px-4 py-3 flex justify-between'>
-<div className='text-[24px] font-semibold' > Function Location Master</div>
-<div><button className='p-2 bg-blue-600 text-white' onClick={toggleDrawer(true)}>Add New Function Location</button></div>
+<div className='text-[24px] font-semibold' >Master Tools</div>
+<div><button className='p-2 bg-blue-600 text-white' onClick={toggleDrawer(true)}>Add New Master Tools</button></div>
     </div>
 
-    <div className='p-2'>
+    <div className='p-2 overflow-x-auto'>
 <table>
   <thead>
       <tr>

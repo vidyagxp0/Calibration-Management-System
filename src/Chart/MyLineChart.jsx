@@ -11,8 +11,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Line, Bar } from 'react-chartjs-2';
-
-// Register the required components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -63,7 +61,7 @@ const MyLineChart = ({ chartType = 'line' }) => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false, 
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -83,7 +81,7 @@ const MyLineChart = ({ chartType = 'line' }) => {
   const ChartComponent = chartType === 'bar' ? Bar : Line;
 
   return (
-    <div className="p-2 w-full h-[300px] sm:h-[400px] lg:h-[500px]">
+    <div className="p-2 w-full sm:h-[500px]"> 
       <h2 className="text-[14px] font-medium">Over Year</h2>
       <p className="text-[12px]">Calibration status.</p>
       <div className="relative w-full h-full">
