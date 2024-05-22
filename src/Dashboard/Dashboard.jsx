@@ -164,7 +164,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="bg-white p-4 drop-shadow-md">
-          <MyCalendar />
+          <MyCalendar/>
         </div>
       </div>
 

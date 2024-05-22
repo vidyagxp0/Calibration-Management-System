@@ -32,24 +32,15 @@ const FunctionLocation = () => {
         <div className="p-2">
           <div className="flex flex-col pt-4 gap-3">
             <label className="font-medium">Code</label>
-            <input
-              type="text"
-              className="border border-gray-500 rounded p-2"
-            />
+            <input type="text" className="border border-gray-500 rounded p-2" />
           </div>
           <div className="flex flex-col pt-4 gap-3">
             <label className="font-medium">Name</label>
-            <input
-              type="text"
-              className="border border-gray-500 rounded p-2"
-            />
+            <input type="text" className="border border-gray-500 rounded p-2" />
           </div>
           <div className="flex flex-col pt-4 gap-3">
             <label className="font-medium">Description</label>
-            <input
-              type="text"
-              className="border border-gray-500 rounded p-2"
-            />
+            <input type="text" className="border border-gray-500 rounded p-2" />
           </div>
 
           <button className="bg-green-600 text-white w-full mt-3 py-2">
@@ -64,9 +55,7 @@ const FunctionLocation = () => {
     <div className="bg-gray-100 min-h-screen">
       <Header />
       <div className="px-4 py-3 flex justify-between">
-        <div className="text-2xl font-semibold">
-          Function Location Master
-        </div>
+        <div className="text-2xl font-semibold">Function Location Master</div>
         <div>
           <button
             className="p-2 bg-blue-600 text-white"
@@ -81,11 +70,21 @@ const FunctionLocation = () => {
         <table className="min-w-full border-collapse">
           <thead className="bg-gray-200">
             <tr>
-              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">S.No.</th>
-              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">CODE</th>
-              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">NAME</th>
-              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">DESCRIPTION</th>
-              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">ACTION</th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">
+                S.No.
+              </th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">
+                CODE
+              </th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">
+                NAME
+              </th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">
+                DESCRIPTION
+              </th>
+              <th className="px-4 py-2 border-b-2 border-gray-300 text-left">
+                ACTION
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -114,11 +113,7 @@ const FunctionLocation = () => {
           </tbody>
         </table>
       </div>
-      <Drawer
-        anchor="right"
-        open={open}
-        onClose={toggleDrawer(false)}
-      >
+      <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
         <DrawerList />
       </Drawer>
     </div>

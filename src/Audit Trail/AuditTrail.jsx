@@ -145,7 +145,7 @@ const AuditTrail = () => {
                 <th className="px-4 py-2">OLD ACTION</th>
                 <th className="px-4 py-2">NEW ACTION</th>
                 <th className="px-4 py-2">EMPLOYEE NAME</th>
-                <th className="px-4 py-2">DEPARTMENT</th>                                                               
+                <th className="px-4 py-2">DEPARTMENT</th>
                 <th className="px-4 py-2">REMARK</th>
               </tr>
             </thead>

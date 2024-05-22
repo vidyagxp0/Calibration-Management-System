@@ -206,8 +206,7 @@ const Employee = () => {
         anchor="right"
         open={open}
         onClose={toggleDrawer(false)}
-        className=""
-      >
+        className="">
         <DrawerList />
       </Drawer>
     </div>

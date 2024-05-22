@@ -29,7 +29,7 @@ const ExecutionUnderReviewer = () => {
                 <td className="px-4 py-2">1 Month</td>
                 <td className="px-4 py-2">2023-07-19</td>
                 <td className="px-4 py-2">2023-08-21</td>
-                <td className="px-4 py-2">
+                <td className="px-4 py-2">  
                   <div className="flex gap-2">
                     <button className="bg-green-500 text-white p-1">View Certificate</button>
                   </div>

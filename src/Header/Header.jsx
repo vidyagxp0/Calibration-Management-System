@@ -26,9 +26,12 @@ const Header = () => {
 
   const handleClickOutside = (event) => {
     if (
-      dropdownRef.current && !dropdownRef.current.contains(event.target) &&
-      workDropdownRef.current && !workDropdownRef.current.contains(event.target) &&
-      logoutDropdownRef.current && !logoutDropdownRef.current.contains(event.target)
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target) &&
+      workDropdownRef.current &&
+      !workDropdownRef.current.contains(event.target) &&
+      logoutDropdownRef.current &&
+      !logoutDropdownRef.current.contains(event.target)
     ) {
       setIsOpen(false);
       setIsWorkOpen(false);
@@ -52,7 +55,6 @@ const Header = () => {
           alt="Logo"
           onClick={() => navigate("/dashboard")}
         />
-    
       </div>
       <div className="md:hidden">
         <button
@@ -62,7 +64,11 @@ const Header = () => {
           {isMobileMenuOpen ? <MenuIcon /> : <MenuIcon />}
         </button>
       </div>
-      <div className={`md:flex ${isMobileMenuOpen ? "block" : "hidden"} mt-4 md:mt-0  flex justify-end  `}>
+      <div
+        className={`md:flex ${
+          isMobileMenuOpen ? "block" : "hidden"
+        } mt-4 md:mt-0  flex justify-end  `}
+      >
         <div className="flex flex-col md:flex-row md:items-center md:gap-4">
           <div
             className={`flex gap-2 hover:text-indigo-500 cursor-pointer ${
@@ -232,7 +238,7 @@ const Header = () => {
                     className="dropdown-item"
                     onClick={() => {
                       navigate("/machine-report");
-                      setIsWorkOpen(!isWorkOpen);                                  
+                      setIsWorkOpen(!isWorkOpen);
                     }}
                   >
                     Machine Report

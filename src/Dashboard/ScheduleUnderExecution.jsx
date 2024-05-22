@@ -5,7 +5,7 @@ import "./Dashboard.css";
 const ScheduleUnderExecution = () => {
   return (
     <div className="bg-gray-100 header">
-      <Header />
+      <Header/>
       <div className="p-4">
         <h3>Schedule Execution Master</h3>
         <div className="p-2 overflow-x-auto">

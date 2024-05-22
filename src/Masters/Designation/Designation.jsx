@@ -153,8 +153,7 @@ const Designation = () => {
         <div>
           <button
             className="p-2 bg-blue-600 text-white"
-            onClick={toggleDrawer(true)}
-          >
+            onClick={toggleDrawer(true)} >
             Add New Designation
           </button>
         </div>

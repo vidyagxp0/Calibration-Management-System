@@ -60,8 +60,7 @@ const WorkFlow = () => {
     setEditingWorkflowId(workflow.id);
     setWorkflowName(workflow.groupName);
     setEmployee(workflow.createdBy);
-    // Assuming we also want to load existing steps for the workflow being edited
-    // This part would be updated based on the actual structure and requirements
+    
   };
 
   return (
