@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Toaster from "../Toaster/Toaster";
-import "./Login.css"; // Import the custom CSS
+import "./Login.css"; 
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Login = () => {
   const handleLogin = () => {
     if (
       (username === "Pankaj" && password === "Pankaj") ||
-      (username === "Admin.vidyagxp.com" && password === "vidyagxp")
+      (username === "Admin@vidyagxp.com" && password === "Amit@121")
     ) {
       setSuccess("Login successful");
       setError(""); 
@@ -24,13 +24,13 @@ const Login = () => {
       setError("Incorrect username or password");
       setSuccess(""); 
   
-      setTimeout(() => setError(""), 1000); // Changed 100 to 1000 for better visibility
+      setTimeout(() => setError(""), 500); 
     }
   };
 
   return (
     <div className="login-container flex justify-center items-center">
-      <div className="flex justify-end items-center h-full w-full max-w-5xl p-4 sm:p-8">
+      <div className="flex justify-center items-center h-full w-full max-w-5xl p-4 sm:p-8">
         <div className="w-full sm:w-1/2 lg:w-3/5 bg-white flex justify-center items-center border border-black rounded-tl-3xl rounded-br-3xl p-8 sm:p-10 lg:p-16 card">
           <div className="w-full">
             <div className="flex flex-col gap-8">
