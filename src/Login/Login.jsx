@@ -35,7 +35,7 @@ const Login = () => {
           <div className="w-full">
             <div className="flex flex-col gap-8">
               <div className="flex justify-center items-center">
-                <img src="/vidyalogo2.png" className="h-24 sm:h-28 lg:h-32" alt="Logo" />
+                <img src="https://connexo.io/assets/img/logo/logo.png" className="h-24 sm:h-28 lg:h-32" alt="Logo" />
               </div>
               <div className="text-center text-xl sm:text-2xl lg:text-3xl font-semibold">
                 Welcome To <span className="text-orange-700">Calibration</span> Management System
