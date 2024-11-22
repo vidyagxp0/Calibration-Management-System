@@ -50,7 +50,7 @@ const Header = () => {
     <div className="bg-white p-4 shadow-md flex justify-between items-center">
       <div className="flex items-center">
         <img
-          src="https://connexo.io/assets/img/logo/logo.png"
+          src="/vidyalogo2.png"
           className="h-14 cursor-pointer"
           alt="Logo"
           onClick={() => navigate("/dashboard")}
